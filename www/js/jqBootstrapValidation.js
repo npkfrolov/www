@@ -51,7 +51,7 @@
 
           $inputs.each(function (i, el) {
             var $this = $(el),
-              $controlGroup = $this.parents(".form-group").first();
+              $controlGroup = $this.parents(".form-group, .checkbox").first();
             if (
               $controlGroup.hasClass("warning")
             ) {
@@ -82,7 +82,7 @@
 
           // Get references to everything we're interested in
           var $this = $(this),
-            $controlGroup = $this.parents(".form-group").first(),
+            $controlGroup = $this.parents(".form-group, .checkbox").first(),
             $helpBlock = $controlGroup.find(".help-block").first(),
             $form = $this.parents("form").first(),
             validatorNames = [];
@@ -189,7 +189,7 @@
               } else if ($this.data("validationEmailMessage")) {
                 message = $this.data("validationEmailMessage");
               }
-              $this.data("validationValidemailMessage", message);
+              $this.data("validationValidemailMessage", message);			  
             }
             // ---------------------------------------------------------
             //                                                MINCHECKED
@@ -510,7 +510,7 @@
 
             var
               $this = $(this),
-              $controlGroup = $this.parents(".form-group").first(),
+              $controlGroup = $this.parents(".form-group, .checkbox").first(),
               $helpBlock = $controlGroup.find(".help-block").first();
 
             // remove our events
